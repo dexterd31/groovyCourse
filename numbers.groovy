@@ -78,3 +78,105 @@ println Math.max(10, 20)        // 20
 
 
 
+// ==============================
+// CLASE: CONVERSIÓN Y REDONDEO DE NÚMEROS EN GROOVY
+// ==============================
+
+// ------------------------------
+// 1. NÚMERO BASE
+// ------------------------------
+def numero = 3.7
+
+println "Número original: $numero"
+
+
+// ------------------------------
+// 2. CONVERSIÓN DE TIPOS (xxxValue)
+// ------------------------------
+println "\n--- Conversión de tipos ---"
+
+println numero.intValue()     // 3
+println numero.longValue()    // 3
+println numero.floatValue()   // 3.7
+println numero.doubleValue()  // 3.7
+
+
+// ------------------------------
+// 3. IMPORTANTE: intValue() TRUNCA
+// ------------------------------
+println "\n--- Truncamiento ---"
+
+def n1 = 3.9
+println "intValue(): ${n1.intValue()}"  // 3
+
+
+// ------------------------------
+// 4. REDONDEO (Math.round)
+// ------------------------------
+println "\n--- Redondeo ---"
+
+def n2 = 3.4
+def n3 = 3.6
+
+println "round(3.4): ${Math.round(n2)}" // 3
+println "round(3.6): ${Math.round(n3)}" // 4
+
+
+// ------------------------------
+// 5. CEIL (SIEMPRE HACIA ARRIBA)
+// ------------------------------
+println "\n--- Ceil ---"
+
+println Math.ceil(3.1) // 4.0
+println Math.ceil(3.9) // 4.0
+
+
+// ------------------------------
+// 6. FLOOR (SIEMPRE HACIA ABAJO)
+// ------------------------------
+println "\n--- Floor ---"
+
+println Math.floor(3.1) // 3.0
+println Math.floor(3.9) // 3.0
+
+
+// ------------------------------
+// 7. COMPARACIÓN CLAVE
+// ------------------------------
+println "\n--- Comparación ---"
+
+def valor = 2.9
+
+println "Original: $valor"
+println "intValue(): ${valor.intValue()}"   // 2
+println "round(): ${Math.round(valor)}"     // 3
+println "ceil(): ${Math.ceil(valor)}"       // 3.0
+println "floor(): ${Math.floor(valor)}"     // 2.0
+
+
+// ------------------------------
+// 8. CASO REAL (NOTAS)
+// ------------------------------
+println "\n--- Caso real ---"
+
+def nota = 3.6
+
+def notaEntera = nota.intValue()
+def notaRedondeada = Math.round(nota)
+
+println "Nota original: $nota"
+println "Truncada: $notaEntera"
+println "Redondeada: $notaRedondeada"
+
+
+// ------------------------------
+// 9. CONVERSIÓN DESDE STRING
+// ------------------------------
+println "\n--- String a número ---"
+
+def texto = "4.8"
+
+def numeroConvertido = texto.toDouble()
+
+println numeroConvertido
+println numeroConvertido.getClass()

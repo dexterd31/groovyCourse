@@ -45,7 +45,7 @@ def edad = 20
 if (edad >= 18) {
     esMayor = true
     println(esMayor)
-    println "la edad es ${edad} y es mayor de edad"
+    println "la edad es $edad y es mayor de edad"
 }
 
 //ejemplo con float y double
